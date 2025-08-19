@@ -13,41 +13,17 @@ def apply_hide_deploy_button_css():
     """
     st.markdown("""
     <style>
-        /* 隐藏Streamlit顶部工具栏和Deploy按钮 - 多种选择器确保兼容性 */
-        .stAppToolbar {
-            display: none !important;
-        }
-        
-        header[data-testid="stHeader"] {
-            display: none !important;
-        }
-        
+        /* 隐藏非必要的顶部元素（保留header与toolbar，确保侧边栏可切换） */
         .stDeployButton {
             display: none !important;
         }
-        
-        /* 新版本Streamlit的Deploy按钮选择器 */
-        [data-testid="stToolbar"] {
-            display: none !important;
-        }
-        
         [data-testid="stDecoration"] {
             display: none !important;
         }
-        
         [data-testid="stStatusWidget"] {
             display: none !important;
         }
-        
-        /* 隐藏整个顶部区域 */
-        .stApp > header {
-            display: none !important;
-        }
-        
-        .stApp > div[data-testid="stToolbar"] {
-            display: none !important;
-        }
-        
+
         /* Modal styling for analysis detail view */
         .analysis-modal {
             background-color: #f8f9fa;
@@ -79,29 +55,12 @@ def apply_hide_deploy_button_css():
             margin: 10px 0;
         }
         
-        /* 隐藏主菜单按钮 */
-        #MainMenu {
-            visibility: hidden !important;
-            display: none !important;
-        }
-        
-        /* 隐藏页脚 */
-        footer {
-            visibility: hidden !important;
-            display: none !important;
-        }
-        
-        /* 隐藏"Made with Streamlit"标识 */
-        .viewerBadge_container__1QSob {
-            display: none !important;
-        }
-        
-        /* 隐藏所有可能的工具栏元素 */
-        div[data-testid="stToolbar"] {
-            display: none !important;
-        }
-        
-        /* 隐藏右上角的所有按钮 */
+        /* 隐藏主菜单按钮与页脚/徽标 */
+        #MainMenu { visibility: hidden !important; display: none !important; }
+        footer { visibility: hidden !important; display: none !important; }
+        .viewerBadge_container__1QSob { display: none !important; }
+
+        /* 去除顶部额外内边距（不影响开关按钮） */
         .stApp > div > div > div > div > section > div {
             padding-top: 0 !important;
         }

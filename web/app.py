@@ -48,9 +48,9 @@ st.set_page_config(
 # 基本CSS样式优化
 st.markdown("""
 <style>
-    /* 隐藏Streamlit默认元素 */
-    .stAppToolbar, header[data-testid="stHeader"], .stDeployButton,
-    [data-testid="stToolbar"], [data-testid="stDecoration"], [data-testid="stStatusWidget"],
+    /* 隐藏部分默认元素（保留顶部header与toolbar以便侧边栏切换） */
+    .stDeployButton,
+    [data-testid="stDecoration"], [data-testid="stStatusWidget"],
     #MainMenu, footer, .viewerBadge_container__1QSob {
         display: none !important;
     }
